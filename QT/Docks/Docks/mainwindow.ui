@@ -50,7 +50,7 @@
    </attribute>
    <widget class="QWidget" name="dockWidgetContents_2"/>
   </widget>
-  <widget class="QDockWidget" name="Dock_3">
+  <widget class="QDockWidget" name="Hierarchy">
    <property name="windowTitle">
     <string>Hierarchy</string>
    </property>

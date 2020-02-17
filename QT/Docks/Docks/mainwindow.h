@@ -5,8 +5,12 @@
 
 namespace Ui {
 class MainWindow;
-class Inspector;
+//class Transform;
+class Mesh;
 }
+
+class Inspector;
+class Hierarchy;
 
 class MainWindow : public QMainWindow
 {
@@ -18,7 +22,8 @@ public:
 
 private:
     Ui::MainWindow *uiMainWindow;
-    Ui::Inspector *uiInspector;
+    Inspector *inspector;
+    Hierarchy *hierarchy;
 
 public slots:
     void SaveFile();

@@ -1,12 +1,32 @@
-//#include "inspector.h"
-//#include "ui_inspector.h"
+#include "inspector.h"
+#include "ui_transform.h"
+#include "ui_mesh.h"
 
-//Inspector::Inspector(QWidget *parent) : QWidget(parent),ui(new Ui::Inspector)
-//{
-//    ui->setupUi(this);
-//}
+#include <QVBoxLayout>
+#include <QSpacerItem>
 
-//Inspector::~Inspector()
-//{
-//    delete ui;
-//}
+Inspector::Inspector(QWidget *parent) : QWidget(parent),uiTransform(new Ui::Transform),uiMesh(new Ui::Mesh)
+{
+    QWidget* transformWidget =new QWidget();
+    uiTransform->setupUi(transformWidget);
+
+    QWidget* meshWidget =new QWidget();
+    uiMesh->setupUi(meshWidget);
+
+    QVBoxLayout* layout = new QVBoxLayout();
+    layout->addWidget(transformWidget);
+    layout->addWidget(meshWidget);
+    layout->addItem(new QSpacerItem(1,1,QSizePolicy::Expanding,QSizePolicy::Expanding));
+    setLayout(layout);
+}
+
+Inspector::~Inspector()
+{
+    delete uiTransform;
+    delete uiMesh;
+}
+
+void Inspector::onEntitySelected(int entityId)
+{
+    int doo=5;
+}

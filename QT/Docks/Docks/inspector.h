@@ -1,22 +1,29 @@
-//#ifndef INSPECTOR_H
-//#define INSPECTOR_H
+#ifndef INSPECTOR_H
+#define INSPECTOR_H
 
-//#include <QWidget>
+#include <QWidget>
 
-//namespace Ui {
-//class Inspector;
-//}
+namespace Ui {
+class Transform;
+class Mesh;
+}
 
-//class Inspector : public QWidget
-//{
-//    Q_OBJECT
 
-//public:
-//    explicit Inspector(QWidget *parent = nullptr);
-//    ~Inspector();
+class Inspector : public QWidget
+{
+    Q_OBJECT
 
-//private:
-//    Ui::Inspector *ui;
-//};
+public:
+    explicit Inspector(QWidget *parent = nullptr);
+    ~Inspector();
 
-//#endif // INSPECTOR_H
+private:
+    Ui::Transform *uiTransform;
+    Ui::Mesh *uiMesh;
+
+public slots:
+    void onEntitySelected(int entityId);
+
+};
+
+#endif // INSPECTOR_H
