@@ -21,6 +21,9 @@ private:
     Ui::Transform *uiTransform;
     Ui::Mesh *uiMesh;
 
+    QWidget* transformWidget;
+    QWidget* meshWidget;
+
 public slots:
     void onEntitySelected(int entityId);
 

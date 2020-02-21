@@ -11,6 +11,7 @@ class Mesh;
 
 class Inspector;
 class Hierarchy;
+class SceneView;
 
 class MainWindow : public QMainWindow
 {
@@ -24,6 +25,7 @@ private:
     Ui::MainWindow *uiMainWindow;
     Inspector *inspector;
     Hierarchy *hierarchy;
+    SceneView* sceneView;
 
 public slots:
     void SaveFile();

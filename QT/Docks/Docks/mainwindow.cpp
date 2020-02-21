@@ -3,10 +3,12 @@
 //#include "inspector.h" 1
 #include "hierarchy.h"
 #include "inspector.h"
+#include "sceneview.h"
 
 #include <QMessageBox>
 #include <QFileDialog>
 #include <iostream>
+#include <QVBoxLayout>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),uiMainWindow(new Ui::MainWindow)
 {
@@ -29,6 +31,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),uiMainWindow(new U
 
     inspector = new Inspector();
     uiMainWindow->Dock_1->setWidget(inspector);
+
+    sceneView= new SceneView();
+    QVBoxLayout* layout = new QVBoxLayout();
+    layout->addWidget(sceneView);
+    uiMainWindow->centralWidget->setLayout(layout);
 
     //Button Connection
     connect(uiMainWindow->LoadProject,SIGNAL(triggered()),this,SLOT(LoadFile()));
